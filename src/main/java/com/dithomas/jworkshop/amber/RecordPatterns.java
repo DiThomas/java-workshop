@@ -15,7 +15,6 @@ public class RecordPatterns {
          * FIXME: This instanceof can be rewritten so that record values are deconstructed
          * Hint: FootballClub itself can be written to a Pattern, which can be then accessed directly
          */
-        //(Hints:
         if (club instanceof FootballClub) {
             //Prior to Java 16 this ugly cast is always needed
             var fc = (FootballClub)club;
@@ -45,8 +44,7 @@ public class RecordPatterns {
 
 }
 
-record FootballClub(String name, int ranking, ClubManager clubManager) {
-}
+record FootballClub(String name, int ranking, ClubManager clubManager) {}
 record FanClub(String name, String idol) {
 }
 record ClubManager(String name, int age) {

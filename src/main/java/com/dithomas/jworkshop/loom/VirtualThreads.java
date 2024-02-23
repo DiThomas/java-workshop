@@ -15,6 +15,8 @@ public class VirtualThreads {
         executeTasksByExecutor(taskCount, startTime);
     }
 
+    //FIXME: Rewrite this method to VirtualThreads instead of classic platform Thread.
+    // Experiment With the different approaches to create Virtual threads
     private static void executeTasksByExecutor(final int taskCount, final Instant startTime) throws InterruptedException {
         CountDownLatch latch = new CountDownLatch(taskCount);
 

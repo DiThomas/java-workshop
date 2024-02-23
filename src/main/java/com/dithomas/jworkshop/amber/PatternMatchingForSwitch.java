@@ -5,6 +5,7 @@ package com.dithomas.jworkshop.amber;
  */
 public class PatternMatchingForSwitch {
 
+    //FIXME: Rewrite this using the Records and patternMatching
     public String processMessage(Object message) {
         if (message instanceof SoapMessage soapMessage) {
             return "Processing SOAP message: " + soapMessage.content();
@@ -13,7 +14,11 @@ public class PatternMatchingForSwitch {
         } else if (message instanceof JMSMessage jmsMessage) {
             return "Processing JMS message: " + jmsMessage.content();
         } else if (message instanceof MessageInABottle bottleMessage && isBottleInOcean(bottleMessage)) {
-//            Hint: the additional isBottleInOcean boolean can be used in a switch statement using when
+            /*
+               Hint: the additional isBottleInOcean boolean can be used in a switch statement using:
+               case x when <predicate>: ..
+               case y: ..
+             */
             return "Processing message in a bottle: " + bottleMessage.content();
         } else if (message instanceof MessageInABottle bottle) {
             return "Message in a bottle cracked due to lack of ocean: " + bottle.content();
@@ -21,7 +26,6 @@ public class PatternMatchingForSwitch {
             return "I did nothing";
         }
     }
-
 
 
     /**
